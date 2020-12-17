@@ -26,7 +26,7 @@ class Media {
     const reducer = (accumulator, currentValue) => {
       return accumulator + currentValue;
     }
-    return this._ratings.reduce(reducer);
+    return Math.round(this._ratings.reduce(reducer)/this.ratings.length);
   }
   addRating(rating) {
     return this._ratings.push(rating);
@@ -63,3 +63,24 @@ class Book extends Media {
      return this._runTime;
    }
  }
+
+ const historyOfEverything = new Book('Bill Bryson', 'A Short History of Nearly Everything', 544);
+
+historyOfEverything.toggleCheckOutStatus();
+historyOfEverything.addRating(4);
+historyOfEverything.addRating(5);
+historyOfEverything.addRating(5);
+
+console.log(historyOfEverything.getAverageRating());
+console.log(historyOfEverything);
+
+const speed = new Movie('Speed', 'Jan de Bont', 116);
+
+console.log(speed);
+speed.toggleCheckOutStatus();
+console.log(speed.isCheckedOut);
+
+speed.addRating(1);
+speed.addRating(1);
+speed.addRating(5);
+console.log(speed.getAverageRating());
