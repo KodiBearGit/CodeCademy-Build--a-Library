@@ -33,10 +33,11 @@ node app.js (with node.js installed)
 * Create classes and sub-classes
 * Create instances
 * Call methods
+* Experimented added Shuffle funtion (found) and tested in out on added CD class.
 
 ## Status
 
-Project is: OnGoing
+Project is: Completed
 
 ## Inspiration
 
